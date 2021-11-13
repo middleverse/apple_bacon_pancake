@@ -1,8 +1,13 @@
 import { getModelForClass, mongoose, prop } from "@typegoose/typegoose";
 
-type Activity = {
+type ActivitySchema = {
   activity_id: string;
   is_done: boolean;
+};
+
+type ActivityContainerSchema = {
+  date: Date;
+  activities: ActivitySchema[];
 };
 
 class DateClass {
@@ -10,7 +15,7 @@ class DateClass {
   _id: string;
 
   @prop({ required: true, default: [] })
-  public activity!: mongoose.Types.Array<mongoose.Types.Array<Activity>>;
+  public activity!: mongoose.Types.Array<ActivityContainerSchema>;
 }
 
 export const DateModel = getModelForClass(DateClass);
