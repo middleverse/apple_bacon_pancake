@@ -1,22 +1,20 @@
 import Head from "next/head";
-import tw, { styled } from "twin.macro";
+import tw, { styled, css } from "twin.macro";
 
-// Components
-import { ShowInfo } from "@/components/Habits";
+const appStyles = css`
+  & > * {
+    min-height: 100vh;
+    color: white;
+  }
+`;
 
 const AppContainer = styled.div`
-  ${tw`bg-blue flex justify-center content-center`}
-`;
-const DashboardContainer = styled.div`
-  ${tw`container flex justify-center bg-white rounded-lg m-6 lg:m-9`}
-`;
-const HabitsContainer = styled.div`
-  ${tw`container flex justify-center bg-yellow rounded-lg m-6 lg:m-9`}
+  ${tw`bg-blue flex justify-center content-center `}
 `;
 
 export default function Home() {
   return (
-    <AppContainer>
+    <AppContainer css={[appStyles]}>
       <Head>
         <link
           href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
@@ -24,11 +22,7 @@ export default function Home() {
         />
         <title>DASHBOARD</title>
       </Head>
-      <DashboardContainer>
-        <HabitsContainer>
-          <div className="flex flex-col items-center justify-center min-h-screen py-2"></div>
-        </HabitsContainer>
-      </DashboardContainer>
+      <div>fdsjifkdlas;fjkdlas;</div>
     </AppContainer>
   );
 }
