@@ -3,8 +3,15 @@ import tw, { styled, TwStyle, css } from "twin.macro";
 const HabitsContainer = styled.div`
   ${tw`bg-yellow text-blue flex justify-center content-center`}
 `;
+
 const HabitContainer = styled.div`
-  ${tw`p-1.5 m-4 relative`}
+  height: 36px;
+  width: 36px;
+  ${tw`flex justify-center relative`};
+`;
+
+const HabitsWarapper = styled.div`
+  ${tw`m-5`};
 `;
 
 const HabitTitleContainer = styled.div`
@@ -16,182 +23,107 @@ const HabitTitle = styled.div`
 `;
 
 const DoneHabit = styled.div`
-  ${tw`bg-red rounded-xl p-1.5 absolute`}
+  width: 12px;
+  height: 12px;
+  ${tw`bg-red rounded-xl absolute z-10`}
 `;
 
 const DefaultHabit = styled.div`
-  ${tw`bg-grey rounded-xl p-1.5 absolute`}
+  width: 12px;
+  height: 12px;
+  ${tw`bg-grey rounded-xl absolute z-0`}
 `;
 
 const DatesContainer = styled.div`
-  ${tw`mt-28 font-bold text-right mr-5 leading-7`}
+  ${tw`mt-28 font-bold text-right mr-5 leading-7 text-sm`}
+`;
+
+const DateContainer = styled.div`
+  ${tw`mb-4`}
 `;
 
 const habits = [
   {
     title: "Yoga",
     _id: 1,
-    status: "ACTIVE"
+    status: "ACTIVE",
+    activities: [
+      {
+        start_date: "04/11/2021",
+        end_date: "08/11/2021",
+        streak: 3,
+      },
+    ],
   },
   {
     title: "Workout",
     _id: 2,
-    status: "ACTIVE"
+    status: "ACTIVE",
+    activities: [
+      {
+        start_date: "04/11/2021",
+        end_date: "08/11/2021",
+        streak: 5,
+      },
+    ],
   },
   {
     title: "Read",
     _id: 2,
-    status: "ACTIVE"
+    status: "ACTIVE",
+    activities: [
+      {
+        start_date: "02/11/2021",
+        end_date: "09/11/2021",
+        streak: 2,
+      },
+    ],
   },
   {
     title: "Meditation",
     _id: 2,
-    status: "ACTIVE"
+    status: "ACTIVE",
+    activities: [
+      {
+        start_date: "03/11/2021",
+        end_date: "10/11/2021",
+        streak: 1,
+      },
+    ],
   },
   {
     title: "Run",
     _id: 2,
-    status: "ACTIVE"
-  }
+    status: "ACTIVE",
+    activities: [
+      {
+        start_date: "04/11/2021",
+        end_date: "08/11/2021",
+        streak: 5,
+      },
+    ],
+  },
 ];
 
-const dates = {
-  user_id: "ew", //userid,
-  dates: {
-    "11/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    },
-    "10/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    },
-    "09/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    },
-    "08/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    },
-    "07/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    },
-    "06/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    },
-    "05/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    },
-    "04/11/2021": {
-      date: "11/11/2021",
-      activity: [
-        {
-          activity_id: 1,
-          is_done: true
-        },
-        {
-          activity_id: 2,
-          is_done: false
-        }
-      ]
-    }
-  }
-};
-
-const getDatesArray = function (dates) {
-  let array = [];
-  for (const date in dates.dates) {
-    array.push(date);
-  }
-  console.log(array);
-  return array;
-};
-
-const arrays = [
-  [true, false, true, true, true, true, false, true, true, true],
-  [false, false, true, false, true, true, false, true, true, true],
-  [true, true, true, false, true, true, true, true, false, true],
-  [true, false, true, true, true, true, false, true, true, true],
-  [false, false, true, false, true, true, false, true, true, true]
+const dates = [
+  "10/11/2021",
+  "11/11/2021",
+  "09/11/2021",
+  "08/11/2021",
+  "07/11/2021",
+  "06/11/2021",
+  "05/11/2021",
+  "04/11/2021",
+  "03/11/2021",
+  "02/11/2021",
 ];
-
-const checkDone = function (habitIndex, itemIndex) {
-  return arrays[habitIndex][itemIndex];
-};
 
 export const Habits: React.FC = () => {
   return (
     <HabitsContainer>
       <DatesContainer>
-        {getDatesArray(dates).map((date, dateIndex) => (
-          <div>{date}</div>
+        {dates.map((date, dateIndex) => (
+          <DateContainer>{date}</DateContainer>
         ))}
       </DatesContainer>
       <HabitsContainer>
@@ -200,19 +132,34 @@ export const Habits: React.FC = () => {
             <HabitTitleContainer>
               <HabitTitle>{habit.title}</HabitTitle>
             </HabitTitleContainer>
-            {arrays[habitIndex].map((is_done, itemIndex) =>
-              is_done ? (
-                <HabitContainer key="{habit.title}-{index}">
-                  <DoneHabit
-                    css={[checkDone(habitIndex, itemIndex + 1) && tw`pb-8`]}
-                  ></DoneHabit>
-                </HabitContainer>
-              ) : (
-                <HabitContainer key="{habit.title}-{index}">
-                  <DefaultHabit />
-                </HabitContainer>
-              )
-            )}
+            <HabitsWarapper>
+              {dates.map((date) => (
+                <div>
+                  {habit.activities.map(({ end_date, streak }) => (
+                    <div>
+                      {end_date === date ? (
+                        <HabitContainer key="{habit.title}-{index}">
+                          <DoneHabit
+                            style={{
+                              height: 36 * (streak - 1) + 12 + "px",
+                            }}
+                            css={[
+                              streak === 1 && tw`bg-orange`,
+                              streak > 1 && streak < 4 && tw`bg-orangePink`,
+                              streak > 4 && tw`animate-wiggle`,
+                            ]}
+                          />
+                        </HabitContainer>
+                      ) : (
+                        <HabitContainer key="{habit.title}-{index}">
+                          <DefaultHabit />
+                        </HabitContainer>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </HabitsWarapper>
           </div>
         ))}
       </HabitsContainer>
