@@ -25,7 +25,7 @@ const HabitTitle = styled.div`
 const DoneHabit = styled.div`
   width: 12px;
   height: 12px;
-  ${tw`bg-red rounded-xl absolute z-10`}
+  ${tw`rounded-xl absolute z-10`}
 `;
 
 const DefaultHabit = styled.div`
@@ -146,9 +146,18 @@ export const Habits: React.FC = () => {
                             css={[
                               streak === 1 && tw`bg-orange`,
                               streak > 1 && streak < 4 && tw`bg-orangePink`,
-                              streak > 4 && tw`animate-wiggle`,
+                              streak > 4 &&
+                                tw`animate-wiggle bg-red animate-hoverShake`,
                             ]}
                           />
+                          {streak > 4 && (
+                            <DoneHabit
+                              style={{
+                                height: 36 * (streak - 1) + 12 + "px",
+                              }}
+                              css={tw`animate-hoverShake`}
+                            />
+                          )}
                         </HabitContainer>
                       ) : (
                         <HabitContainer key="{habit.title}-{index}">

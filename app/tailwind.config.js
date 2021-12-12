@@ -5,28 +5,51 @@ module.exports = {
   purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      display: ["Poppins"],
+      body: ['"Open Sans"'],
+    },
     extend: {
+      transitionProperty: {
+        height: "height",
+        spacing: "margin, padding",
+        background: "background",
+      },
       animation: {
-        wiggle: "wiggle 1s infinite",
+        wiggle: "wiggle 1s cubic-bezier(0, 0, 0.2, 0.5) infinite",
+        redGradient: "redGradient 1s infinite",
+        hoverShake: "animation: hoverShake 0.15s linear 3",
       },
       keyframes: {
+        hoverShake: {
+          "0%": { transform: "skew(0deg,0deg)" },
+          "25%": { transform: "skew(5deg, 5deg)" },
+          "75%": { transform: "skew(-5deg, -5deg)" },
+          "100%": { transform: "skew(0deg,0deg)" },
+        },
         wiggle: {
-          "10%, 90%": {
-            transform: "translate3d(-1px, 1px, -1px)",
-          },
-          "20%, 80%": {
-            transform: "translate3d(1px, 0, 1px)",
-          },
-          "30%, 50%, 70%": {
-            transform: "translate3d(-1px, -1px, 0)",
-          },
-          "40%, 60%": {
-            transform: "translate3d(1px, 0, 1px)",
+          "75%, 100%": {
+            transform: "scale(1.1)",
+            opacity: "0",
           },
         },
-        wiggle2: {
-          "0%, 100%": { transform: "rotate(-3deg)" },
-          "50%": { transform: "rotate(3deg)" },
+        redGradient: {
+          "0%": {
+            backgroundColor: "red",
+          },
+
+          "25%": {
+            backgroundColor: "orange",
+          },
+          "50%": {
+            backgroundColor: "red",
+          },
+          "75%": {
+            backgroundColor: "orange",
+          },
+          "100%": {
+            backgroundColor: "red",
+          },
         },
       },
     },
@@ -35,6 +58,7 @@ module.exports = {
       current: "currentColor",
       blue: {
         DEFAULT: "#00199E",
+        light: "#BAC1EA",
       },
       white: {
         DEFAULT: "#ffffff",

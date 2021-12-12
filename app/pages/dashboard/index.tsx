@@ -2,20 +2,20 @@ import tw, { styled } from "twin.macro";
 
 // Components
 import { Habits } from "../../components/Habits";
-import { Todos } from "../../components/Todos";
+import { Tasks } from "../../components/Tasks";
 
 const AppContainer = styled.div`
-  ${tw`bg-blue flex justify-center content-center`}
+  ${tw`bg-blue flex justify-center content-center p-5 md:p-8`}
 `;
 const DashboardContainer = styled.div`
-  ${tw`container flex flex-row justify-center bg-white rounded-lg m-6 lg:m-9 grid grid-cols-3`}
+  ${tw`container flex flex-row justify-center bg-white p-8 rounded-lg grid grid-cols-5`}
 `;
 const SidebarContainer = styled.div`
-  ${tw``}
+  ${tw`col-span-2`}
 `;
 
 const HabitsContainer = styled.div`
-  ${tw`container flex justify-center bg-yellow rounded-lg m-6 lg:m-9 col-span-2`}
+  ${tw`container flex justify-center bg-yellow rounded-lg p-5 lg:p-9 col-span-3`}
 `;
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
     <AppContainer>
       <DashboardContainer>
         <SidebarContainer>
-          <Todos />
+          <Tasks />
         </SidebarContainer>
 
         <HabitsContainer>
