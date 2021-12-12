@@ -2,7 +2,7 @@ import tw, { styled } from "twin.macro";
 import { Task } from "./Task";
 
 const TodosContainer = styled.div`
-  ${tw`m-5`}
+  ${tw``}
 `;
 
 const Heading2 = styled.div`
@@ -12,11 +12,13 @@ const Heading2 = styled.div`
 const tasks = [
   {
     description: "Order Atomic Habits",
-    status: "OPEN", // "OPEN", "DONE", "DELETED"
+    done: false,
+    archived: false,
   },
   {
     description: "Call Osteopath",
-    status: "OPEN",
+    done: false,
+    archived: false,
   },
 ];
 

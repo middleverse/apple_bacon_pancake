@@ -8,7 +8,7 @@ const AppContainer = styled.div`
   ${tw`bg-blue flex justify-center content-center p-5 md:p-8`}
 `;
 const DashboardContainer = styled.div`
-  ${tw`container flex flex-row justify-center bg-white p-8 rounded-lg grid grid-cols-5`}
+  ${tw`container flex flex-row justify-center bg-white p-5 lg:p-10 rounded-lg grid grid-cols-5 gap-5 lg:gap-10`}
 `;
 const SidebarContainer = styled.div`
   ${tw`col-span-2`}

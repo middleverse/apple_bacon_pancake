@@ -18,13 +18,19 @@ module.exports = {
       animation: {
         wiggle: "wiggle 1s cubic-bezier(0, 0, 0.2, 0.5) infinite",
         redGradient: "redGradient 1s infinite",
-        hoverShake: "animation: hoverShake 0.15s linear 3",
+        hoverShake: "hoverShake 0.2s linear infinite",
       },
       keyframes: {
         hoverShake: {
-          "0%": { transform: "skew(0deg,0deg)" },
-          "25%": { transform: "skew(5deg, 5deg)" },
-          "75%": { transform: "skew(-5deg, -5deg)" },
+          "0%": {
+            transform: "skew(0deg,0deg)",
+            backgroundImage: "linear-gradient(red, orange)",
+          },
+          "25%": {
+            transform: "skew(1deg, 1deg)",
+            backgroundImage: "linear-gradient(orange, red)",
+          },
+          "75%": { transform: "skew(-1deg, -1deg)" },
           "100%": { transform: "skew(0deg,0deg)" },
         },
         wiggle: {
