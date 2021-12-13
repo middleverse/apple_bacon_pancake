@@ -17,44 +17,33 @@ module.exports = {
       },
       animation: {
         wiggle: "wiggle 1s cubic-bezier(0, 0, 0.2, 0.5) infinite",
-        redGradient: "redGradient 1s infinite",
-        hoverShake: "hoverShake 0.2s linear infinite",
+        redGradint: "redGradint 0.8s linear infinite",
       },
       keyframes: {
-        hoverShake: {
+        redGradint: {
           "0%": {
-            transform: "skew(0deg,0deg)",
-            backgroundImage: "linear-gradient(red, orange)",
+            // transform: "skew(0deg,0deg)",
+            backgroundImage: "linear-gradient(#FF3C00, #FF773D)",
           },
           "25%": {
-            transform: "skew(1deg, 1deg)",
-            backgroundImage: "linear-gradient(orange, red)",
+            // transform: "skew(1deg, 1deg)",
+            backgroundImage: "linear-gradient(#FF773D, #FF3C00)",
           },
-          "75%": { transform: "skew(-1deg, -1deg)" },
-          "100%": { transform: "skew(0deg,0deg)" },
+          "50%": {
+            // transform: "skew(1deg, 1deg)",
+            backgroundImage: "linear-gradient(#FF3C00, #FF773D)",
+          },
+          "75%": {
+            // transform: "skew(1deg, 1deg)",
+            backgroundImage: "linear-gradient(#FF773D, #FF3C00)",
+          },
+          // "75%": { transform: "skew(-1deg, -1deg)" },
+          // "100%": { transform: "skew(0deg,0deg)" },
         },
         wiggle: {
           "75%, 100%": {
             transform: "scale(1.1)",
             opacity: "0",
-          },
-        },
-        redGradient: {
-          "0%": {
-            backgroundColor: "red",
-          },
-
-          "25%": {
-            backgroundColor: "orange",
-          },
-          "50%": {
-            backgroundColor: "red",
-          },
-          "75%": {
-            backgroundColor: "orange",
-          },
-          "100%": {
-            backgroundColor: "red",
           },
         },
       },

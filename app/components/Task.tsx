@@ -10,7 +10,8 @@ const StatusCircle = styled.div`
 interface TaskProps {
   task: {
     description: string;
-    status: string;
+    done: boolean;
+    archived: boolean;
   };
 }
 
@@ -19,7 +20,7 @@ export const Task: React.FC<TaskProps> = (props) => {
 
   return (
     <TodoContainer>
-      <StatusCircle css={[task.status === "DONE" && tw`bg-yellow`]} />
+      <StatusCircle css={[task.done && tw`bg-yellow`]} />
       <div>{task.description}</div>
     </TodoContainer>
   );

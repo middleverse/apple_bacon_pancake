@@ -11,7 +11,7 @@ const HabitContainer = styled.div`
 `;
 
 const HabitsWarapper = styled.div`
-  ${tw`m-5`};
+  ${tw`m-5 mt-6`};
 `;
 
 const HabitTitleContainer = styled.div`
@@ -35,7 +35,7 @@ const DefaultHabit = styled.div`
 `;
 
 const DatesContainer = styled.div`
-  ${tw`mt-28 font-bold text-right mr-5 leading-7 text-sm`}
+  ${tw`mt-28 pt-1 font-bold text-right mr-5 leading-7 text-sm`}
 `;
 
 const DateContainer = styled.div`
@@ -147,17 +147,17 @@ export const Habits: React.FC = () => {
                               streak === 1 && tw`bg-orange`,
                               streak > 1 && streak < 4 && tw`bg-orangePink`,
                               streak > 4 &&
-                                tw`animate-wiggle bg-red animate-hoverShake`,
+                                tw`animate-wiggle bg-red animate-redGradint`,
                             ]}
                           />
-                          {streak > 4 && (
+                          {/* {streak > 4 && (
                             <DoneHabit
                               style={{
                                 height: 36 * (streak - 1) + 12 + "px",
                               }}
-                              css={tw`animate-hoverShake`}
+                              css={tw`animate-redGradint`}
                             />
-                          )}
+                          )} */}
                         </HabitContainer>
                       ) : (
                         <HabitContainer key="{habit.title}-{index}">
