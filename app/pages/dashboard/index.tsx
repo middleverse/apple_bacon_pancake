@@ -5,7 +5,7 @@ import { Habits } from "../../components/Habits";
 import { Tasks } from "../../components/Tasks";
 
 const AppContainer = styled.div`
-  ${tw`bg-blue flex justify-center content-center p-5 md:p-8`}
+  ${tw`bg-blue flex justify-center content-center p-5 md:p-8 min-h-screen`}
 `;
 const DashboardContainer = styled.div`
   ${tw`container flex flex-row justify-center bg-white p-5 lg:p-10 rounded-lg grid grid-cols-5 gap-5 lg:gap-10`}
@@ -27,7 +27,7 @@ export default function Home() {
         </SidebarContainer>
 
         <HabitsContainer>
-          <div className="flex flex-col items-center justify-center min-h-screen py-2"></div>
+          <div className="flex flex-col items-center justify-center py-2"></div>
 
           <Habits />
         </HabitsContainer>

@@ -20,6 +20,11 @@ const tasks = [
     done: false,
     archived: false,
   },
+  {
+    description: "Organize Office",
+    done: true,
+    archived: false,
+  },
 ];
 
 export const Tasks: React.FC = () => {
