@@ -5,13 +5,13 @@ import { User } from "./User";
 import { Ref } from "../types/Ref";
 
 @ObjectType()
-export class Stream {
+export class Task {
   @Field()
   readonly _id: ObjectId;
 
-  @Field()
-  @Property({ required: true })
-  title: string;
+  // @Field()
+  // @Property({ required: true })
+  // title: string;
 
   @Field()
   @Property({ required: true })
@@ -19,11 +19,15 @@ export class Stream {
 
   @Field()
   @Property({ required: true })
-  url: string;
+  done: boolean;
+
+  @Field()
+  @Property({ required: true })
+  archived: boolean;
 
   @Field(() => User)
   @Property({ ref: User, required: true })
   author: Ref<User>;
 }
 
-export const StreamModel = getModelForClass(Stream);
+export const TaskModel = getModelForClass(Task);

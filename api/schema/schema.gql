@@ -9,9 +9,9 @@ input AuthInput {
 }
 
 type Mutation {
-  addStream(input: StreamInput!): Stream!
-  deleteStream(streamId: ObjectId!): Boolean!
-  editStream(input: StreamInput!): Stream!
+  addTask(input: TaskInput!): Task!
+  deleteTask(taskId: ObjectId!): Boolean!
+  editTask(input: TaskInput!): Task!
   login(input: AuthInput!): UserResponse!
   register(input: AuthInput!): UserResponse!
 }
@@ -21,24 +21,24 @@ scalar ObjectId
 
 type Query {
   currentUser: User
-  stream(streamId: ObjectId!): Stream
-  streams: [Stream!]!
+  task(taskId: ObjectId!): Task
+  tasks: [Task!]!
   user(userId: ObjectId!): User
 }
 
-type Stream {
+type Task {
   _id: ObjectId!
+  archived: Boolean!
   author: User!
   description: String!
-  title: String!
-  url: String!
+  done: Boolean!
 }
 
-input StreamInput {
+input TaskInput {
+  archived: Boolean!
   description: String
+  done: Boolean!
   id: ObjectId
-  title: String!
-  url: String!
 }
 
 type User {

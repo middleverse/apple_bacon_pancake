@@ -1,19 +1,19 @@
 import { InputType, Field } from "type-graphql";
 
 import { ObjectId } from "mongodb";
-import { Stream } from "../models/Stream";
+import { Task } from "../models/Task";
 
 @InputType()
-export class StreamInput implements Partial<Stream> {
+export class TaskInput implements Partial<Task> {
   @Field({ nullable: true })
   id?: ObjectId;
-
-  @Field()
-  title: string;
 
   @Field({ nullable: true })
   description?: string;
 
   @Field()
-  url: string;
+  done: boolean;
+
+  @Field()
+  archived: boolean;
 }
