@@ -32,7 +32,7 @@ export const Tasks: React.FC = () => {
     <TodosContainer>
       <Heading2>TASKS</Heading2>
       {tasks.map((task) => (
-        <Task task={task}></Task>
+        <Task task={task} key={task.description}></Task>
       ))}
     </TodosContainer>
   );

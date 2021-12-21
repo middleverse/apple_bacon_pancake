@@ -123,12 +123,12 @@ export const Habits: React.FC = () => {
     <HabitsContainer>
       <DatesContainer>
         {dates.map((date, dateIndex) => (
-          <DateContainer>{date}</DateContainer>
+          <DateContainer key={date}>{date}</DateContainer>
         ))}
       </DatesContainer>
       <HabitsContainer>
         {habits.map((habit, habitIndex) => (
-          <div>
+          <div key={habit.title}>
             <HabitTitleContainer>
               <HabitTitle>{habit.title}</HabitTitle>
             </HabitTitleContainer>

@@ -1,27 +1,25 @@
-import "./modal.css";
+import React, { useState } from "react";
+import { Dialog } from "@headlessui/react";
 
-import tw, { styled, css } from "twin.macro";
-
-const bagItemInfoStyles = css`
-   {
-    margin-top: 0.5em;
-  }
-`;
-
-export const Modal = ({ handleClose, show, children }) => {
-  const showHideClassName = show ? "modal display-block" : "modal display-none";
+export const Modal: React.FC = () => {
+  let [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div
-      css={[bagItemInfoStyles, tw`flex w-full flex-col ml-4`]}
-      className={showHideClassName}
-    >
-      <section className="modal-main">
-        {children}
-        <button type="button" onClick={handleClose}>
-          Close
-        </button>
-      </section>
-    </div>
+    <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+      <Dialog.Overlay />
+
+      <Dialog.Title>Deactivate account</Dialog.Title>
+      <Dialog.Description>
+        This will permanently deactivate your account
+      </Dialog.Description>
+
+      <p>
+        Are you sure you want to deactivate your account? All of your data will
+        be permanently removed. This action cannot be undone.
+      </p>
+
+      <button onClick={() => setIsOpen(false)}>Deactivate</button>
+      <button onClick={() => setIsOpen(false)}>Cancel</button>
+    </Dialog>
   );
 };
