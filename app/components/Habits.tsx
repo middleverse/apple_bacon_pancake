@@ -133,10 +133,10 @@ export const Habits: React.FC = () => {
               <HabitTitle>{habit.title}</HabitTitle>
             </HabitTitleContainer>
             <HabitsWarapper>
-              {dates.map((date) => (
-                <div>
+              {dates.map((date, index) => (
+                <div key={date + index}>
                   {habit.activities.map(({ end_date, streak }) => (
-                    <div>
+                    <div key={end_date + streak}>
                       {end_date === date ? (
                         <HabitContainer key="{habit.title}-{index}">
                           <DoneHabit

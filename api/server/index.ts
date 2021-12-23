@@ -18,8 +18,9 @@ async function createServer() {
 
     // allow CORS from client app
     const corsOptions = {
-      // origin: 'http://localhost:3000',
-      origin: "https://studio.apollographql.com",
+      origin: "*",
+      // origin: "http://localhost:3000",
+      // origin: "https://studio.apollographql.com",
       credentials: true,
     };
     app.use(cors(corsOptions));
