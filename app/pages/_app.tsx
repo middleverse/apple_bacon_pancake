@@ -3,13 +3,17 @@ import { GlobalStyles } from "twin.macro";
 
 import { ApolloProvider } from "@apollo/client";
 
+import Header from "./Header";
+
 import { useApollo } from "lib/apollo";
+import { AuthProvider } from "lib/useAuth";
 
 const App = ({ Component, pageProps }) => {
   const apolloClient = useApollo(pageProps.initialApolloState);
 
   return (
     <ApolloProvider client={apolloClient}>
+      <Header></Header>
       <div>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -25,7 +29,9 @@ const App = ({ Component, pageProps }) => {
           referrerPolicy="no-referrer"
         />
         <GlobalStyles />
-        <Component {...pageProps} />
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
       </div>
     </ApolloProvider>
   );

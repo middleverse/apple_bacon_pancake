@@ -6,10 +6,10 @@ module.exports = {
       {
         "preset-react": {
           runtime: "automatic",
-          importSource: "@emotion/react"
-        }
-      }
-    ]
+          importSource: "@emotion/react",
+        },
+      },
+    ],
   ],
-  plugins: ["@emotion/babel-plugin", "babel-plugin-macros"]
+  plugins: ["@emotion/babel-plugin", "babel-plugin-macros"],
 };
