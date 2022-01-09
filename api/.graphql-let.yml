@@ -1,4 +1,4 @@
-schema: "lib/schema.graphqls"
+schema: "lib/schema.gql"
 documents: "**/*.graphql"
 plugins:
   - typescript

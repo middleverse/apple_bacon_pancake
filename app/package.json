@@ -1,5 +1,8 @@
 {
-  "name": "app",
+  "name": "@abp/app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "babelMacros": {
     "twin": {
       "preset": "emotion"
@@ -8,7 +11,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npx graphql-let && next build",
     "start": "next start"
   },
   "dependencies": {

@@ -1,3 +1,7 @@
+import nextApp from "@abp/app";
+
+const handle = nextApp.getRequestHandler();
+
 import "./env";
 import "reflect-metadata";
 import { ApolloServer } from "apollo-server-express";
@@ -46,6 +50,10 @@ async function createServer() {
     const apolloServer = new ApolloServer(options);
     await apolloServer.start();
     apolloServer.applyMiddleware({ app, cors: corsOptions });
+
+    // create next app request handler
+    await nextApp.prepare();
+    app.get("*", (req, res) => handle(req, res));
 
     // start the server
     app.listen({ port }, () => {
